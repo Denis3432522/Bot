@@ -1,4 +1,4 @@
-package bot;
+package bot.handlers;
 
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
