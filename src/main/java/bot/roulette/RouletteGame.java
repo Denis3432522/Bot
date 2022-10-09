@@ -107,21 +107,22 @@ public class RouletteGame {
         addRoleToNewStar(event);
     }
 
-    private void removeRoleFromPrevStar() {
-        String prevStarId = star.getPreviousStarId();
-
-        if(prevStarId == null)
-            return;
-
-        Member prevStarMember = guild.getMemberById(prevStarId);
-        guild.removeRoleFromMember(prevStarMember, starRole).queue();
-    }
-
     public void checkStarTimeLeft() {
         if(star.isStarPresent() && star.getTimeLeft() == 0) {
             star.resetStar();
             removeRoleFromPrevStar();
         }
+    }
+
+    private void removeRoleFromPrevStar() {
+        String prevStarId = star.getPreviousStarId();
+        System.out.println("removing from: " + prevStarId);
+        if(prevStarId == null)
+            return;
+
+        Member prevStarMember = guild.getMemberById(prevStarId);
+        guild.removeRoleFromMember(prevStarMember, starRole).queue();
+        System.out.println("Role removed");
     }
 
     private void addRoleToNewStar(SlashCommandEvent event) {

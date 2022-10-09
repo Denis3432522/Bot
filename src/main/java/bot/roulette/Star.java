@@ -77,9 +77,6 @@ public class Star {
         return true;
     }
     public synchronized boolean isStarPresent() {
-        if(isStarPresent && getTimeLeft() == 0) {
-            resetStar();
-        }
         return isStarPresent;
     }
 
