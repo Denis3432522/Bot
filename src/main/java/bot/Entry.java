@@ -22,6 +22,7 @@ public class Entry {
 }
 
 class A implements Runnable {
+
     Storage storage;
 
     A(Storage storage) {
